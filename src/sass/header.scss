@@ -1,5 +1,53 @@
-header {
-    .lms-header-logo {
-        margin-right: auto;
+.re-header{
+    padding: 25px 80px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    .navbar-brand{
+        width: 200px;
+    }
+    ul{
+        li{
+            a.nav-link{
+                padding-right: 20px !important;
+                padding-left: 20px !important;
+                color: $c-dgray;
+                position: relative;
+                font-weight: $f-bold;
+                &:after{
+                    @include mixin-before-after;
+                    @include mixin-transition;
+                    opacity: 0;
+                    top: auto;
+                    background-color: $c-primary;
+                    width: 30px;
+                    height: 2px;
+                    bottom: -10px;
+                    margin: 0 auto;
+                }
+                &.re-btn{
+                    color:$white;
+                    margin-left: 40px;
+                    &:hover,
+                    &:focus,
+                    &:active{
+                        color: $c-primary;
+                    }
+                    &:after{
+                        display: none;
+                    }
+                }
+            }
+            &.active{
+                a{
+                    color: $c-primary;
+                    &:after{
+                        opacity: 1;
+                    }
+                }
+            }
+        }
     }
 }

@@ -9,22 +9,299 @@
 
 // @import "cover";
 
-@import "header";
-@import "index";
-@import "font-awesome";
-@import "about";
-@import "datatable";
-@import "contact-us";
 
-main {
-    .container {
-        min-height: 500px;
-    }
+
+
+
+html{
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
-
 body {
-    font-family: 'Raleway';
+    font-family: $f-primary;
     text-rendering: optimizeLegibility !important;
     -webkit-font-smoothing: antialiased !important;
     -moz-osx-font-smoothing: grayscale;
+    color:$c-lgray;
+    font-size:16px;
+    font-weight: $f-medium;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    @include media-breakpoint-down(lg){
+        font-size: 14px;       
+    }
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+ul {
+    margin: 0;
+    padding: 0;
+    line-height: normal;
+    list-style-type: none;
+}
+
+span {
+    display: inline-block;
+}
+
+i {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+img {
+    max-width: 100%;
+}
+ input{
+    &:hover,
+    &:focus,
+    &:active {
+        outline: none; 
+        box-shadow: none;
+    }
+ }
+a,
+button {
+    @include mixin-transition;
+    display: inline-block;
+    color: inherit;
+    border: none;
+    &:hover,
+    &:focus,
+    &:active {
+        text-decoration: none;
+        opacity: 1;
+        outline: none;       
+        color: inherit;
+        box-shadow: none;
+    }
+}
+.container{
+    max-width: 1600px;
+}
+p{
+    font-size: 20px;
+    line-height: 35px;
+}
+.re-main{
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    overflow: hidden;
+    main{
+        flex: 1;
+    }
+}
+
+.re-btn{
+    font-size: 16px;
+    font-weight: $f-bold;
+    color: $white;
+    border-radius: 50px;
+    border:1px solid $c-primary;
+    background-color: $c-primary;
+    min-width: 160px;
+    padding: 13px 44px !important;
+    text-align: center;
+    &:hover,
+    &:focus,
+    &:active{
+        background-color: transparent;
+        color: $c-primary;
+    }
+}
+.re-auth{
+    .form-group{
+        position: relative;
+    }
+    .form-control{
+        border: none;
+        border-bottom: 1px solid #C4C4C4;
+        padding: 0 0 10px;
+        font-size: 18px;
+        color: $c-primary;
+        background-color: transparent;
+        &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+            color: $c-lgray;
+            opacity: 0.5;
+          }
+         &::-moz-placeholder { /* Firefox 19+ */
+            color: $c-lgray;
+            opacity: 0.5;
+          }
+          &:-ms-input-placeholder { /* IE 10+ */
+            color: $c-lgray;
+            opacity: 0.5;
+          }
+          &:-moz-placeholder { /* Firefox 18- */
+            color: $c-lgray;
+            opacity: 0.5;
+          }
+    }
+    .btn{
+        background:transparent url(../images/next-arrow.svg) no-repeat;
+        background-position: center center;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        border: none;
+        &:active,
+        &:hover,
+        &:focus{
+            box-shadow: none;
+            background-color: transparent;
+        }
+    }
+}
+.re-shape{
+    position: relative;
+    width: 700px;
+    height: 486px;
+    &:after,
+    &:before{
+        @include mixin-before-after;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    &:before{
+        background-image: url(../images/shape-1.svg);
+        width: 552px;
+        height: 486px;
+        animation: footer-before-anim 6s linear infinite;
+        -webkit-animation: footer-before-anim 6s linear infinite;
+        @keyframes footer-before-anim {
+            0%{
+                transform: translateY(0)
+            }
+            50%{
+                transform: translateY(50px);
+            }
+            100%{
+                transform: translateY(0)
+            }
+        }
+    }
+    &:after{
+        background-image: url(../images/shape-2.svg);
+        width: 700px;
+        height: 438px;
+        z-index: -1;
+        animation: footer-after-anim 6s linear infinite;
+        -webkit-animation: footer-after-anim 6s linear infinite;
+        @keyframes footer-after-anim {
+            0%{
+                transform: translateY(0)
+            }
+            50%{
+                transform: translateY(-50px);
+            }
+            100%{
+                transform: translateY(0)
+            }
+        }
+    }
+}
+
+.re-readmore{
+    font-size: 14px;
+    color: $c-primary;
+    position: relative;
+    padding-right: 10px;
+    &:after{
+        @include mixin-before-after;
+        left: 100%;
+        background: url(../images/next-arrow.svg) no-repeat;
+        background-position: center;
+        background-size: contain;
+        width: 15px;
+        height: 15px;
+        transform: rotate(-45deg);
+    }
+}
+.re-section-img{
+    position: relative;
+    height: 568px;
+    margin-bottom: 75px;
+    &:before{
+        @include mixin-before-after;
+        background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100.03%);
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+    .re-clip-img{
+        clip-path: url(#myClip);
+    }
+}
+
+.re-title{
+    position: relative;
+    font-size:70px;
+    font-weight: $f-bold;
+    margin-bottom: 70px;
+    display: inline-block;
+    color: $c-primary;
+    line-height: 70px;
+    &:after,
+    &:before{
+        @include mixin-before-after;
+        background-color: $c-primary;
+        opacity: 0.35;
+        width: 100px;
+        height: 2px;
+        margin:auto;
+    }
+    &:before{
+        right: auto;
+        left: -140px;
+    }
+    &:after{
+        left: auto;
+        right: -140px;
+    }
+}
+.re-data-list{
+    background-color: $white;
+    padding: 40px 45px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 65px 20px rgba(197, 26, 53, 0.08);
+    @include mixin-transition;
+    img{
+        width: 90px;
+        height: 90px;
+        margin-bottom: 20px;
+    }
+    h3{
+        font-size: 50px;
+        color: $c-primary;
+        margin:0 0 20px;
+    }
+    p{        
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;  
+        overflow: hidden;
+    }
+    .re-readmore{
+        margin-top: 10px;
+    }
+}
+
+.re-teacher-content,
+.re-business-content,
+.re-contact-content{
+    position: relative;
+    z-index: 1;
+}
+@import "header";
+@import "index";
+@import "footer";
