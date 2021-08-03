@@ -1,4 +1,3 @@
-
 // Body
 $enable-rounded: false;
 // $info:red;
@@ -41,4 +40,34 @@ $f-light:300;
     width: 100%;
     height: 100%;
     object-position: center;
+}
+
+@mixin media-breakpoint-up-xxxl {
+    @media (min-width: 1801px) {
+        @content;
+    }
+}
+
+@mixin media-breakpoint-up-xxl {
+    @media (min-width: 1601px) {
+        @content;
+    }
+}
+
+@mixin media-breakpoint-up-xl {
+    @media (min-width: 1401px) {
+        @content;
+    }
+}
+
+@mixin media-breakpoint-down-xxl {
+    @media (max-width: 1600px) {
+        @content;
+    }
+}
+
+@mixin media-breakpoint-down-xl {
+    @media (max-width: 1400px) {
+        @content;
+    }
 }

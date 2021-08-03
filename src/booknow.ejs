@@ -1,4 +1,4 @@
-    <!doctype html>
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -13,32 +13,75 @@
     <% include /src/include/styles.ejs %>
 
 </head>
+
 <body>
     <div class="re-main">
         <% include /src/include/header.ejs %>
-    <main class="re-teacher-content">
-        <section class="re-section-img">
-            <img class="re-clip-img" src="images/about-img.png" alt="">
+            <main class="re-book-content">
+                <section class="re-section-img">
+                    <img class="re-clip-img" src="images/about-img.png" alt="">
 
-            <svg width="1920" height="569" viewBox="0 0 1920 569" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <clipPath id="myClip">
-                <path d="M556 487.5C0.682739 305.074 -195.333 400.167 -351 566.5L-0.5 0H1920C2135.5 142.166 2952 174.501 2255.5 245C1682.79 302.969 1350.5 748.5 556 487.5Z" fill="url(#paint0_linear)"/>
-            </clipPath>
-             </svg>
-                
-        </section>
-        <section class="re-teacher-data">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-md-12 text-center">
-                        <h2 class="re-title">Book Now</h2>
+                    <svg width="1920" height="569" viewBox="0 0 1920 569" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <clipPath id="myClip">
+                            <path
+                                d="M556 487.5C0.682739 305.074 -195.333 400.167 -351 566.5L-0.5 0H1920C2135.5 142.166 2952 174.501 2255.5 245C1682.79 302.969 1350.5 748.5 556 487.5Z"
+                                fill="url(#paint0_linear)" />
+                        </clipPath>
+                    </svg>
+
+                </section>
+                <section class="re-book-data">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-md-12 text-center">
+                                <h2 class="re-title">Book</h2>
+                            </div>
+                        </div>
+                        <ul class="nav nav-tabs row justify-content-center" id="myTab" role="tablist">
+                            <li class="nav-item col-lg-3 col-md-4 col-6" role="presentation">
+                                <a class="nav-link active re-data-list" id="learner-tab" data-toggle="tab"
+                                    href="#learner" role="tab" aria-controls="learner" aria-selected="true">Individual
+                                    Learners</a>
+                            </li>
+                            <li class="nav-item col-lg-3 col-md-4 col-6" role="presentation">
+                                <a class="nav-link re-data-list" id="business-tab" data-toggle="tab" href="#business"
+                                    role="tab" aria-controls="business" aria-selected="false">Business Customers</a>
+                            </li>
+                        </ul>
+                        <div class="row justify-content-center">
+                            <div class="col-md-8">
+                                <div class="tab-content" id="myTabContent">
+                                    <div class="tab-pane fade show active" id="learner" role="tabpanel"
+                                        aria-labelledby="learner-tab">
+                                        <div class="re-book-calendar">
+                                            <p>Please enter the special code for your business now.</p>
+                                            <div class="row justify-content-center mt-4">
+                                                <div class="col-md-5">
+                                                    <form action="" class="re-auth">
+                                                        <div class="form-group">
+                                                            <input type="number" class="form-control"
+                                                                id="exampleInputPassword1" placeholder="Enter Code">
+                                                            <button type="submit" class="btn btn-primary"></button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="business" role="tabpanel"
+                                        aria-labelledby="business-tab">
+                                        <div class="re-book-calendar">
+                                            <p>If you have a discount code, use it now.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            
-            </div>
-        </section>
-    </main>
-    <% include /src/include/footer.ejs %>
+                </section>
+            </main>
+            <% include /src/include/footer.ejs %>
 
     </div>
     <% include /src/include/scripts.ejs %>

@@ -1,22 +1,76 @@
-.re-header{
+.re-header {
     padding: 25px 80px;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     z-index: 3;
-    .navbar-brand{
-        width: 200px;
+
+    @include media-breakpoint-down-xxl {
+        padding: 20px 65px;
     }
-    ul{
-        li{
-            a.nav-link{
+
+    @include media-breakpoint-down-xl {
+        padding: 10px 30px;
+    }
+
+    @include media-breakpoint-down(lg) {
+        padding: 10px 15px;
+    }
+
+    .navbar-nav {
+        @include media-breakpoint-down(sm) {
+            background-color: $white;
+        }
+    }
+
+    .navbar-toggler {
+        padding: 0;
+
+        span {
+            background: url(../images/menu.svg) no-repeat;
+            background-size: contain;
+            background-position: center center;
+            width: 30px;
+            height: 30px;
+        }
+    }
+
+    .navbar-brand {
+        width: 200px;
+
+        @include media-breakpoint-down-xl {
+            width: 170px;
+        }
+
+        @include media-breakpoint-down(lg) {
+            width: 140px;
+        }
+
+        @include media-breakpoint-down(md) {
+            width: 110px;
+        }
+    }
+
+    ul {
+        li {
+            @include media-breakpoint-down(md) {
+                margin: 10px 0;
+            }
+
+            a.nav-link {
                 padding-right: 20px !important;
                 padding-left: 20px !important;
                 color: $c-dgray;
                 position: relative;
                 font-weight: $f-bold;
-                &:after{
+
+                @include media-breakpoint-down(lg) {
+                    padding-right: 15px !important;
+                    padding-left: 15px !important;
+                }
+
+                &:after {
                     @include mixin-before-after;
                     @include mixin-transition;
                     opacity: 0;
@@ -26,24 +80,37 @@
                     height: 2px;
                     bottom: -10px;
                     margin: 0 auto;
+
+                    @include media-breakpoint-down-xxl {
+                        bottom: 0px;
+                    }
                 }
-                &.re-btn{
-                    color:$white;
+
+                &.re-btn {
+                    color: $white;
                     margin-left: 40px;
+
+                    @include media-breakpoint-down-xl {
+                        margin-left: 15px;
+                    }
+
                     &:hover,
                     &:focus,
-                    &:active{
+                    &:active {
                         color: $c-primary;
                     }
-                    &:after{
+
+                    &:after {
                         display: none;
                     }
                 }
             }
-            &.active{
-                a{
+
+            &.active {
+                a {
                     color: $c-primary;
-                    &:after{
+
+                    &:after {
                         opacity: 1;
                     }
                 }

@@ -1,18 +1,38 @@
-
-.re-about-content{
-    .re-about-data{
+.re-about-content {
+    .re-about-data {
         margin-top: -20%;
         position: relative;
-        z-index: 1;   
+        z-index: 1;
+
+        @include media-breakpoint-down-xl {
+            margin-top: -25%;
+        }
+
+        @include media-breakpoint-down(md) {
+            margin-top: 0;
+        }
     }
 }
-.re-teacher-content{
-    .re-teacher-quote{
+
+.re-teacher-content {
+    .re-teacher-quote {
         padding: 53px 30px 30px;
-        text-indent: 60px;    
-        position: relative;   
+        text-indent: 60px;
+        position: relative;
         margin-bottom: 50px;
-        &:before{
+
+        @include media-breakpoint-down-xl {
+            padding: 45px 25px 25px;
+            text-indent: 55px;
+            margin-bottom: 40px;
+        }
+
+        @include media-breakpoint-down(md) {
+            padding: 32px 15px 15px;
+            margin-bottom: 30px;
+        }
+
+        &:before {
             @include mixin-before-after;
             bottom: auto;
             top: 30px;
@@ -22,39 +42,100 @@
             background-size: contain;
             width: 50px;
             height: 50px;
+
+            @include media-breakpoint-down-xl {
+                width: 45px;
+                height: 45px;
+                top: 25px;
+                left: 25px;
+            }
+
+            @include media-breakpoint-down(md) {
+                width: 38px;
+                height: 38px;
+                top: 20px;
+                left: 20px;
+            }
         }
-       p{           
-            display: block;          
-       }
+
+        p {
+            display: block;
+        }
     }
-    a{
+
+    a {
         padding: 30px 45px;
         text-align: center;
-        h3{
-            font-size: 30px;
+
+        @include media-breakpoint-down-xxl {
+            padding: 25px;
         }
+
+        @include media-breakpoint-down(lg) {
+            padding: 20px;
+        }
+
+        h3 {
+            font-size: 30px;
+
+            @include media-breakpoint-down-xxl {
+                font-size: 25px;
+            }
+
+            @include media-breakpoint-down(lg) {
+                font-size: 20px;
+            }
+        }
+
         &:hover,
         &:active,
-        &:focus{
+        &:focus {
             background-color: $c-primary;
-            h3,p{
+
+            h3,
+            p {
                 color: $white;
             }
         }
     }
 }
 
-.re-contact-content{
-    .row{
+.re-contact-content {
+    .row {
         margin-bottom: 50px;
+
+        @include media-breakpoint-down(lg) {
+            margin-bottom: 25px;
+        }
     }
-    h3{
+
+    h3 {
         font-size: 40px;
         font-weight: $f-light;
         margin-bottom: 30px;
         color: $c-primary;
+
+        @include media-breakpoint-down-xxl {
+            font-size: 35px;
+            margin-bottom: 20px;
+        }
+
+        @include media-breakpoint-down-xl {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        @include media-breakpoint-down(lg) {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        @include media-breakpoint-down(md) {
+            font-size: 22px;
+        }
     }
-    .re-data-list{
+
+    .re-data-list {
         padding: 50px;
         text-align: center;
         position: relative;
@@ -65,7 +146,16 @@
         background-color: transparent;
         box-shadow: none;
         cursor: pointer;
-        .re-contact-img-data{
+
+        @include media-breakpoint-down-xl {
+            padding: 20px 20px 50px;
+        }
+
+        @include media-breakpoint-down(md) {
+            padding: 20px 15px 50px;
+        }
+
+        .re-contact-img-data {
             width: 230px;
             height: 230px;
             border-radius: 50%;
@@ -73,18 +163,61 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            .re-contact-img{
+
+            @include media-breakpoint-down-xxl {
+                width: 210px;
+                height: 210px;
+            }
+
+            @include media-breakpoint-down-xl {
+                width: 180px;
+                height: 180px;
+            }
+
+            @include media-breakpoint-down(lg) {
+                width: 160px;
+                height: 160px;
+            }
+
+            @include media-breakpoint-down(md) {
+                width: 120px;
+                height: 120px;
+            }
+
+            .re-contact-img {
                 width: 200px;
                 height: 200px;
                 border-radius: 50%;
                 overflow: hidden;
-                img{
+
+                @include media-breakpoint-down-xxl {
+                    width: 180px;
+                    height: 180px;
+                }
+
+                @include media-breakpoint-down-xl {
+                    width: 160px;
+                    height: 160px;
+                }
+
+                @include media-breakpoint-down(lg) {
+                    width: 140px;
+                    height: 140px;
+                }
+
+                @include media-breakpoint-down(md) {
+                    width: 100px;
+                    height: 100px;
+                }
+
+                img {
                     @include mixin-imgset;
                 }
             }
         }
-        p{
-            color:$c-primary;
+
+        p {
+            color: $c-primary;
             position: absolute;
             bottom: 5px;
             left: 0;
@@ -93,13 +226,74 @@
             @include mixin-transition;
             opacity: 0;
 
+            @include media-breakpoint-down-xl {
+                bottom: 9px;
+            }
+
         }
-        &:hover{
+
+        &:hover {
             background-color: $white;
             box-shadow: 0px 0px 65px 20px rgba(197, 26, 53, 0.08);
-            p{
+
+            p {
                 opacity: 1;
             }
+        }
+    }
+}
+
+.re-book-content {
+    .re-book-data {
+        ul {
+            border: none;
+        }
+
+        .re-data-list {
+            border: none;
+            padding: 23px;
+            font-size: 30px;
+            color: $c-primary;
+            border-radius: 10px;
+            text-align: center;
+            white-space: nowrap;
+
+            @include media-breakpoint-down-xxl {
+                padding: 20px;
+                font-size: 26px;
+            }
+
+            @include media-breakpoint-down-xl {
+                padding: 17px;
+                font-size: 20px;
+            }
+
+            @include media-breakpoint-down(lg) {
+                padding: 12px;
+                font-size: 16px;
+                border-radius: 5px;
+            }
+
+            @include media-breakpoint-down(md) {
+                font-size: 15px;
+            }
+
+            @include media-breakpoint-down(sm) {
+                font-size: 14px;
+            }
+
+            &:hover,
+            &:focus,
+            &:active,
+            &.active {
+                background-color: $c-primary;
+                color: $white;
+            }
+        }
+
+        .tab-content {
+            text-align: center;
+            margin-top: 30px;
         }
     }
 }
