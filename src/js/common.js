@@ -41,12 +41,13 @@ jQuery(document).ready(function ($) {
             $('body').removeClass('uni-scroll-up-show');
         }
     });
-    $('.uni-scroll-up').click(function () {
-        $("html, body").animate({
-            scrollTop: 0,
-        }, 200);
-        $('body').removeClass('uni-header-hide')
-        return false;
+    $('.navbar-toggler').click(function () {
+        $(this).toggleClass('re-menu-open');
+    });
+    AOS.init({
+        offset: 60,
+        once: false,
+        duration: 800,
     });
     var swiper = new Swiper(".re-siper-blog", {
         slidesPerView: 2,

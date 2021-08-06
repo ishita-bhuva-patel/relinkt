@@ -18,26 +18,128 @@
         padding: 10px 15px;
     }
 
-    .navbar-nav {
+    .navbar-collapse {
         @include media-breakpoint-down(sm) {
-            background-color: $white;
+            height: 100%;
+            opacity: 0;
+            @include mixin-transition;
+            display: block !important;
+            visibility: hidden;
+        }
+
+        .navbar-nav {
+            @include media-breakpoint-down(sm) {
+                background-color: $white;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                height: 100%;
+                padding-top: 20%;
+            }
+        }
+
+        &.show,
+        &.collapsing {
+            opacity: 1;
+            visibility: visible;
         }
     }
 
+
     .navbar-toggler {
         padding: 0;
+        width: 30px;
+        height: 20px;
+        position: relative;
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: .5s ease-in-out;
+        -moz-transition: .5s ease-in-out;
+        -o-transition: .5s ease-in-out;
+        transition: .5s ease-in-out;
+        cursor: pointer;
+        border: none;
+        z-index: 1;
 
         span {
-            background: url(../images/menu.svg) no-repeat;
-            background-size: contain;
-            background-position: center center;
-            width: 30px;
-            height: 30px;
+            display: block;
+            position: absolute;
+            height: 2px;
+            width: 100%;
+            background: $c-primary;
+            opacity: 1;
+            left: 0;
+            -webkit-transform: rotate(0deg);
+            -moz-transform: rotate(0deg);
+            -o-transform: rotate(0deg);
+            transform: rotate(0deg);
+            -webkit-transition: .25s ease-in-out;
+            -moz-transition: .25s ease-in-out;
+            -o-transition: .25s ease-in-out;
+            transition: .25s ease-in-out;
+
+            &:nth-child(1) {
+                top: 0px;
+                -webkit-transform-origin: left center;
+                -moz-transform-origin: left center;
+                -o-transform-origin: left center;
+                transform-origin: left center;
+            }
+
+            &:nth-child(2) {
+                top: 10px;
+                -webkit-transform-origin: left center;
+                -moz-transform-origin: left center;
+                -o-transform-origin: left center;
+                transform-origin: left center;
+            }
+
+            &:nth-child(3) {
+                top: 20px;
+                -webkit-transform-origin: left center;
+                -moz-transform-origin: left center;
+                -o-transform-origin: left center;
+                transform-origin: left center;
+            }
         }
+
+        &.re-menu-open {
+            span {
+                &:nth-child(1) {
+                    -webkit-transform: rotate(45deg);
+                    -moz-transform: rotate(45deg);
+                    -o-transform: rotate(45deg);
+                    transform: rotate(45deg);
+                    left: 2px;
+                }
+
+                &:nth-child(2) {
+                    width: 0%;
+                    opacity: 0;
+                }
+
+                &:nth-child(3) {
+                    -webkit-transform: rotate(-45deg);
+                    -moz-transform: rotate(-45deg);
+                    -o-transform: rotate(-45deg);
+                    transform: rotate(-45deg);
+                    top: 21px;
+                    left: 2px;
+                }
+            }
+        }
+
+
     }
 
     .navbar-brand {
         width: 200px;
+        position: relative;
+        z-index: 1;
 
         @include media-breakpoint-down-xl {
             width: 170px;
