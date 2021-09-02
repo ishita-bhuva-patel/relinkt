@@ -571,6 +571,91 @@ p {
     z-index: 1;
 }
 
+.re-body-menu-open {
+    overflow: hidden;
+}
+.re-teacher-quote {
+        padding: 53px 30px 30px;       
+        position: relative;
+        margin-bottom: 50px;
+
+        @include media-breakpoint-down-xl {
+            padding: 45px 25px 25px;
+            margin-bottom: 40px;
+        }
+
+        @include media-breakpoint-down(md) {
+            padding: 32px 15px 15px;
+            margin-bottom: 30px;
+        }
+
+        &:before {
+            @include mixin-before-after;
+            bottom: auto;
+            top: 30px;
+            left: 30px;
+            background: url(../images/quote.svg) no-repeat;
+            background-position: center center;
+            background-size: contain;
+            width: 50px;
+            height: 50px;
+
+            @include media-breakpoint-down-xl {
+                width: 45px;
+                height: 45px;
+                top: 25px;
+                left: 25px;
+            }
+
+            @include media-breakpoint-down(md) {
+                width: 38px;
+                height: 38px;
+                top: 20px;
+                left: 20px;
+            }
+        }
+
+        p {
+            display: block;
+            text-indent: 20px;
+            &:nth-child(1){
+                text-indent: 60px;
+                @include media-breakpoint-down-xl {
+                    text-indent: 55px;
+                }
+            }
+        }
+    }
+.re-modal{
+    .modal-content{
+        border:none;
+    }
+    h5{
+        font-size: 25px;
+        color: $c-primary;
+            margin-bottom: 8px;
+    }
+    .close{
+        color: $c-primary;
+        font-size: 25px;
+        top: 9px;
+        right: 15px;
+        line-height: 25px;
+        opacity: 1;
+        position: absolute;
+    }
+    p{
+        margin-bottom: 5px;
+        text-indent: 15px;
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+}
+
+.post, .page{
+    margin: 0;
+}
 @import "header";
 @import "index";
 @import "footer";

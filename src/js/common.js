@@ -1,48 +1,19 @@
-
-$(window).bind('mousewheel', function (event) {
-    if (event.originalEvent.wheelDelta >= 50) {
-        $('body').removeClass('uni-header-hide');
-    }
-    else {
-        $('body').addClass('uni-header-hide');
-    }
-});
-
-
-$(window).scroll(function () {
-    var scroll = $(window).scrollTop();
-    if (scroll == 0) {
-        $('body').removeClass('uni-headere-show').addClass('uni-scroll-up-show');
-    }
-    else {
-        $('body').addClass('uni-headere-show').removeClass('uni-scroll-up-show');
-    }
-
-});
-
-$(window).on('load', function () {
-    setTimeout(function () {
-        $(".uni-loader").addClass('uni-loader-hide');
-        setTimeout(function () {
-            AOS.init({
-                duration: 1000,
-                once: true,
-            });
-        }, 200);
-    }, 500);
-
-    $(window).scrollTop(0);
-});
+// $(window).on('load', function () {
+//     setTimeout(function () {
+//         $(".uni-loader").addClass('uni-loader-hide');
+//         setTimeout(function () {
+//             AOS.init({
+//                 duration: 1000,
+//                 once: true,
+//             });
+//         }, 200);
+//     }, 500);s
+//     $(window).scrollTop(0);
+// });
 jQuery(document).ready(function ($) {
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 50) {
-            $('body').addClass('uni-scroll-up-show');
-        } else {
-            $('body').removeClass('uni-scroll-up-show');
-        }
-    });
     $('.navbar-toggler').click(function () {
         $(this).toggleClass('re-menu-open');
+        $('html').toggleClass('re-body-menu-open');
     });
     AOS.init({
         offset: 60,
@@ -72,6 +43,19 @@ jQuery(document).ready(function ($) {
                 slidesPerView: 2,
             },
         },
+    });
+    $('.re-readmore').click(function () {
+        $('html').addClass('overflow-hidden');
+    });
+    $('.close').click(function () {
+        $('html').removeClass('overflow-hidden');
+    });
+    $('.re-modal').keypress(function (event) {
+        if (event.which == 27) {
+            $('html').addClass('overflow-hidden');
+            console.log("hiii");
+        }
+
     });
 });
 

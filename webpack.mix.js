@@ -70,7 +70,7 @@ mix.webpackConfig({
             filename: "contact.html",
             inject: false
         }),
-         new HtmlWebpackPlugin({
+        new HtmlWebpackPlugin({
             template: "ejs-compiled-loader!./src/booknow.ejs",
             filename: "booknow.html",
             inject: false
